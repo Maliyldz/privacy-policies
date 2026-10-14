@@ -1,11 +1,356 @@
-Gizlilik Politikası
 
-Fiş Takip uygulaması, gizliliğinize önem verir.
-- Uygulama, kişisel verilerinizi bir sunucuya göndermez veya üçüncü taraflarla paylaşmaz.
-- Harcama kayıtlarınız ve fiş fotoğraflarınız yalnızca cihazınızda saklanır.
-- Fiş okuma (OCR) işlemi cihazınız üzerinde gerçekleştirilir ve internet bağlantısı gerektirmez.
-- Uygulama, kullanıcı hesabı oluşturulmasını gerektirmez ve reklam veya analiz hizmetleri kullanmaz.
-- Uygulamayı kaldırdığınızda, uygulamanın cihazda tuttuğu yerel veriler silinebilir. Cihazın galerisine kaydedilen fotoğraflar ve yedekler ayrıca kalabilir.
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-İletişim: mali.yildiz.dev@gmail.com
-Son güncelleme: Ekim 2026
+    <meta name="theme-color" content="#f7f7fb">
+    <meta name="description" content="Fiş Takip uygulamasının gizlilik politikası.">
+
+    <title>Gizlilik Politikası | Fişlik</title>
+
+    <style>
+        :root {
+            --primary: #6254d9;
+            --primary-light: #efedff;
+            --background: #f7f7fb;
+            --surface: #ffffff;
+            --text: #202033;
+            --text-secondary: #69697d;
+            --border: #e9e8f1;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont,
+                "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            background: var(--background);
+            color: var(--text);
+            line-height: 1.75;
+            min-height: 100vh;
+            padding: 48px 20px;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 760px;
+            margin: 0 auto;
+        }
+
+        .brand {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            margin-bottom: 32px;
+            color: var(--text);
+            font-size: 18px;
+            font-weight: 700;
+            letter-spacing: -0.4px;
+        }
+
+        .brand-icon {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 42px;
+            height: 42px;
+            border-radius: 13px;
+            background: var(--primary);
+            color: white;
+        }
+
+        .brand-icon svg {
+            width: 23px;
+            height: 23px;
+        }
+
+        .document {
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: 24px;
+            padding: 48px;
+            box-shadow: 0 12px 40px rgba(35, 30, 80, 0.045);
+        }
+
+        .eyebrow {
+            display: inline-flex;
+            align-items: center;
+            gap: 7px;
+            padding: 6px 12px;
+            border-radius: 100px;
+            background: var(--primary-light);
+            color: var(--primary);
+            font-size: 12px;
+            font-weight: 700;
+            letter-spacing: 0.6px;
+            text-transform: uppercase;
+            margin-bottom: 18px;
+        }
+
+        .eyebrow svg {
+            width: 15px;
+            height: 15px;
+        }
+
+        h1 {
+            font-size: clamp(30px, 5vw, 40px);
+            line-height: 1.2;
+            letter-spacing: -1.4px;
+            font-weight: 750;
+            margin-bottom: 16px;
+        }
+
+        .intro {
+            color: var(--text-secondary);
+            font-size: 16px;
+            margin-bottom: 32px;
+        }
+
+        .divider {
+            height: 1px;
+            background: var(--border);
+            margin-bottom: 28px;
+        }
+
+        .policy-list {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 14px;
+        }
+
+        .policy-list li {
+            position: relative;
+            padding: 18px 20px 18px 50px;
+            background: #fafafe;
+            border: 1px solid #f0eff8;
+            border-radius: 14px;
+            color: #414155;
+            font-size: 15px;
+            line-height: 1.8;
+        }
+
+        .policy-list li::before {
+            content: "";
+            position: absolute;
+            left: 19px;
+            top: 23px;
+            width: 19px;
+            height: 19px;
+            border-radius: 50%;
+            background-color: var(--primary-light);
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%236254d9' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='m5 12 4 4L19 6'/%3E%3C/svg%3E");
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: 12px;
+        }
+
+        .contact {
+            margin-top: 32px;
+            padding: 22px;
+            border-radius: 16px;
+            background: #f7f6ff;
+            border: 1px solid #eeecff;
+        }
+
+        .contact-label {
+            color: var(--text-secondary);
+            font-size: 12px;
+            font-weight: 700;
+            letter-spacing: 0.8px;
+            text-transform: uppercase;
+            margin-bottom: 6px;
+        }
+
+        .contact a {
+            color: var(--primary);
+            font-size: 15px;
+            font-weight: 600;
+            text-decoration: none;
+            overflow-wrap: anywhere;
+        }
+
+        .contact a:hover {
+            text-decoration: underline;
+        }
+
+        .updated {
+            display: flex;
+            align-items: center;
+            gap: 9px;
+            margin-top: 28px;
+            color: var(--text-secondary);
+            font-size: 13px;
+        }
+
+        .updated svg {
+            width: 17px;
+            height: 17px;
+            flex-shrink: 0;
+        }
+
+        footer {
+            text-align: center;
+            padding: 28px 12px 0;
+            color: #89899b;
+            font-size: 12px;
+        }
+
+        @media (max-width: 600px) {
+            body {
+                padding: 28px 14px;
+            }
+
+            .brand {
+                margin-bottom: 24px;
+            }
+
+            .document {
+                padding: 28px 20px;
+                border-radius: 20px;
+            }
+
+            h1 {
+                letter-spacing: -0.8px;
+            }
+
+            .intro {
+                font-size: 15px;
+            }
+
+            .policy-list li {
+                padding: 16px 15px 16px 43px;
+                font-size: 14px;
+            }
+
+            .policy-list li::before {
+                left: 14px;
+                top: 20px;
+            }
+
+            .contact {
+                padding: 18px;
+            }
+        }
+
+        @media (prefers-reduced-motion: no-preference) {
+            .document {
+                animation: appear 0.45s ease-out both;
+            }
+
+            @keyframes appear {
+                from {
+                    opacity: 0;
+                    transform: translateY(10px);
+                }
+
+                to {
+                    opacity: 1;
+                    transform: translateY(0);
+                }
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <main class="container">
+
+        <div class="brand">
+            <span class="brand-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none"
+                    stroke="currentColor" stroke-width="2"
+                    stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M6 2h9l5 5v15H6a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2Z"/>
+                    <path d="M14 2v6h6"/>
+                    <path d="M8 13h8"/>
+                    <path d="M8 17h8"/>
+                </svg>
+            </span>
+            <span>Fişlik</span>
+        </div>
+
+        <article class="document">
+
+            <div class="eyebrow">
+                <svg viewBox="0 0 24 24" fill="none"
+                    stroke="currentColor" stroke-width="2"
+                    stroke-linecap="round" stroke-linejoin="round"
+                    aria-hidden="true">
+                    <rect x="3" y="11" width="18" height="11" rx="2"/>
+                    <path d="M7 11V7a5 5 0 0 1 10 0v4"/>
+                </svg>
+                Gizlilik ve Güvenlik
+            </div>
+
+            <h1>Gizlilik Politikası</h1>
+
+            <p class="intro">
+                Fişlik, gizliliğinize önem verir.
+            </p>
+
+            <div class="divider"></div>
+
+            <ul class="policy-list">
+                <li>
+                    Uygulama, kişisel verilerinizi bir sunucuya göndermez
+                    veya üçüncü taraflarla paylaşmaz.
+                </li>
+
+                <li>
+                    Harcama kayıtlarınız ve fiş fotoğraflarınız yalnızca
+                    cihazınızda saklanır.
+                </li>
+
+                <li>
+                    Fiş okuma (OCR) işlemi cihazınız üzerinde gerçekleştirilir
+                    ve internet bağlantısı gerektirmez.
+                </li>
+
+                <li>
+                    Uygulama, kullanıcı hesabı oluşturulmasını gerektirmez
+                    ve reklam veya analiz hizmetleri kullanmaz.
+                </li>
+
+                <li>
+                    Uygulamayı kaldırdığınızda, uygulamanın cihazda tuttuğu
+                    yerel veriler silinebilir. Cihazın galerisine kaydedilen
+                    fotoğraflar ve yedekler ayrıca kalabilir.
+                </li>
+            </ul>
+
+            <section class="contact">
+                <p class="contact-label">İletişim</p>
+                <a href="mailto:mali.yildiz.dev@gmail.com">
+                    mali.yildiz.dev@gmail.com
+                </a>
+            </section>
+
+            <div class="updated">
+                <svg viewBox="0 0 24 24" fill="none"
+                    stroke="currentColor" stroke-width="1.8"
+                    stroke-linecap="round" stroke-linejoin="round"
+                    aria-hidden="true">
+                    <circle cx="12" cy="12" r="10"/>
+                    <path d="M12 6v6l4 2"/>
+                </svg>
+                <span>Son güncelleme: Ekim 2026</span>
+            </div>
+
+        </article>
+
+        <footer>
+            Fişlik · Gizlilik Politikası
+        </footer>
+
+    </main>
+</body>
+</html>
